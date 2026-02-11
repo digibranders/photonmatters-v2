@@ -6,11 +6,11 @@ export function Solution() {
   return (
     <section className="py-24 bg-white overflow-x-visible overflow-y-hidden">
       <div className="container mx-auto px-4 md:px-8">
-        {/* Main Dark Container - overflow-visible so phone can animate out on hover; explicit corners */}
-        <div className="relative rounded-tl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-bl-[3rem] bg-gradient-to-br from-eterna-3 via-eterna-gradient-end to-eterna-3 min-h-[600px] flex flex-col lg:flex-row items-center overflow-visible shadow-2xl shadow-eterna-3/20">
+        {/* Main Dark Container - rounded corners + thin border for clear frame */}
+        <div className="relative rounded-[3rem] border border-white/20 bg-gradient-to-br from-eterna-3 via-eterna-gradient-end to-eterna-3 min-h-[600px] flex flex-col lg:flex-row items-center overflow-visible shadow-2xl shadow-eterna-3/20">
             
-            {/* Background Gradients - clip to container corners */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none rounded-tl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-bl-[3rem]">
+            {/* Background Gradients - clip to container rounded corners */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none rounded-[3rem]">
                 <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-eterna-2/15 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-eterna-1/10 rounded-full blur-[80px]" />
             </div>
