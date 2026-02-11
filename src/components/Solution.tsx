@@ -4,13 +4,13 @@ import iphoneMockup from "figma:asset/a16d402caad4aa2e925379c855d7bbbfb9dba658.p
 
 export function Solution() {
   return (
-    <section className="py-24 bg-white overflow-hidden">
+    <section className="py-24 bg-white overflow-x-visible overflow-y-hidden">
       <div className="container mx-auto px-4 md:px-8">
-        {/* Main Dark Container */}
-        <div className="relative rounded-[3rem] bg-gradient-to-br from-eterna-3 via-eterna-gradient-end to-eterna-3 min-h-[600px] flex flex-col lg:flex-row items-center overflow-hidden shadow-2xl shadow-eterna-3/20">
+        {/* Main Dark Container - overflow-visible so phone can animate out on hover; explicit corners */}
+        <div className="relative rounded-tl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-bl-[3rem] bg-gradient-to-br from-eterna-3 via-eterna-gradient-end to-eterna-3 min-h-[600px] flex flex-col lg:flex-row items-center overflow-visible shadow-2xl shadow-eterna-3/20">
             
-            {/* Background Gradients */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+            {/* Background Gradients - clip to container corners */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none rounded-tl-[3rem] rounded-tr-[3rem] rounded-br-[3rem] rounded-bl-[3rem]">
                 <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-eterna-2/15 rounded-full blur-[100px]" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[500px] h-[500px] bg-eterna-1/10 rounded-full blur-[80px]" />
             </div>
@@ -32,9 +32,9 @@ export function Solution() {
                 </button>
             </div>
 
-            {/* Visual Composition - Right */}
-            <div className="w-full lg:w-1/2 h-full relative flex justify-center items-center min-h-[400px] lg:min-h-full p-10">
-                <div className="relative w-full max-w-[500px] aspect-square">
+            {/* Visual Composition - Right - extra right padding so phone sits inside container by default */}
+            <div className="group w-full lg:w-1/2 h-full relative flex justify-center items-center min-h-[400px] lg:min-h-full pl-10 pr-14 md:pr-16 pt-10 pb-10 overflow-visible">
+                <div className="relative w-full max-w-[420px] aspect-square overflow-visible">
                     
                     {/* Floating Card: Analytics (Back Left) */}
                     <div className="absolute top-[10%] left-[-5%] w-48 h-32 bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-4 transform -rotate-6 z-10 animate-pulse-slow hidden md:block">
@@ -61,12 +61,12 @@ export function Solution() {
                         </div>
                     </div>
 
-                    {/* Main Visual: Phone (Center) */}
-                    <div className="absolute inset-0 flex justify-center items-center z-20">
+                    {/* Main Visual: Phone (Center) - inside container by default; comes out on hover */}
+                    <div className="absolute inset-0 flex justify-center items-center z-20 transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] group-hover:translate-x-[-20px] group-hover:scale-110 group-hover:drop-shadow-[0_32px_48px_rgba(0,0,0,0.35)]">
                          <img 
                             src={iphoneMockup} 
                             alt="SME-Corporate Loans Interface" 
-                            className="w-[260px] md:w-[300px] drop-shadow-2xl transform hover:scale-105 transition-transform duration-700"
+                            className="w-[240px] md:w-[280px] drop-shadow-2xl transform transition-transform duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)]"
                         />
                     </div>
 
