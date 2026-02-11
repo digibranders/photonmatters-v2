@@ -1,7 +1,7 @@
 import { ArrowRight, Sparkles, Play } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
-import mobileDashboard from "figma:asset/a16d402caad4aa2e925379c855d7bbbfb9dba658.png";
-import desktopDashboard from "figma:asset/07b254bc6d6217c6a0ac336ebc3da1a0fc6426b7.png";
+import mobileDashboard from "@/assets/a16d402caad4aa2e925379c855d7bbbfb9dba658.png";
+import desktopDashboard from "@/assets/07b254bc6d6217c6a0ac336ebc3da1a0fc6426b7.png";
 import heroBgVideo from "@/assets/photonmatters-hero-bg.mp4";
 
 export function Hero() {
@@ -15,16 +15,15 @@ export function Hero() {
           muted
           loop
           playsInline
-          className="absolute inset-0 z-0 w-full h-full object-cover"
         >
           <source src={heroBgVideo} type="video/mp4" />
         </video>
         {/* Solid purple overlay over video - inline style to ensure it applies */}
-        <div
+        {/* <div
           className="absolute inset-0 z-[1] w-full h-full"
           style={{ backgroundColor: 'rgba(78, 75, 203, 0.5)' }}
           aria-hidden
-        />
+        /> */}
         {/* Layered gradients - behind overlay */}
         <div className="absolute inset-0 z-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-eterna-4/10 via-transparent to-transparent"></div>
         
